@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Web App</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase SDK setup -->
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-database-compat.js" defer></script>
+
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js" defer></script>
+</head>
+<body>
+    <div id="loading-page" class="container">
+        <h2>Loading, please wait...</h2>
+    </div>
+
+    <div id="login-page" class="container hidden">
+        <h2>Welcome to Chat</h2>
+        <button id="login-button" class="button-primary">Login with Google</button>
+    </div>
+
+    <div id="chat-page" class="container hidden">
+        <div id="profile-info">
+            <img id="profile-icon" class="profile-icon" src="" alt="Profile Icon">
+            <span id="profile-name"></span>
+            <button id="logout-button" class="button-secondary">Logout</button>
+        </div>
+        <button id="theme-switcher" class="button-secondary">Toggle Theme</button>
+
+        <h2>Online Users</h2>
+        <div id="online-users-list" class="online-users"></div>
+        <div id="typing-indicator" class="typing-indicator hidden">Someone is typing...</div>
+
+        <h2>Chat Room</h2>
+        <div id="messages" class="messages"></div>
+        <div id="message-input-container">
+            <input type="text" id="message-input" placeholder="Type a message">
+            <button id="send-button" class="button-primary">Send</button>
+        </div>
+    </div>
+
+    <!-- Load JavaScript containing chat logic -->
+    <script src="script.js" defer></script>
+</body>
+</html>
